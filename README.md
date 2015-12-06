@@ -1,4 +1,4 @@
-# Kharon
+# Metis
 
 UNDER DEVELOPMENT!
 
@@ -20,7 +20,7 @@ and use this module to choose one of them based on some rules and statistics abo
 
 * Static: from a configuration file
 * Discovered: A background service will periodically fetch the list from a discovery server, like [Athena](https://github.com/mt-olympus/athena) 
-* Fetched: A background service will periodically fetch the list from a configuration server, like [Hermes](https://github.com/mt-olympus/hermes)
+* Fetched: A background service will periodically fetch the list from a configuration server, like [Demeter](https://github.com/mt-olympus/demeter)
 
 ### Rule
 
