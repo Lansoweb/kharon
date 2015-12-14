@@ -5,6 +5,8 @@ namespace Metis;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Cache\StorageFactory;
+use Metis\Strategy\Random;
+use Metis\Strategy\RoundRobin;
 
 class Factory implements FactoryInterface
 {
@@ -16,11 +18,15 @@ class Factory implements FactoryInterface
         $config = $serviceLocator->get('config');
         $metisConfig = $config['metis'];
         $storageConfig = $metisConfig['storage'];
-        $serverList = $metisConfig['server_list'];
+        $strategyName = $metisConfig['strategy'];
 
-        $hermes = $serviceLocator->get(\Hermes\Api\Client::class);
-        $storage = StorageFactory::factory($storageConfig);
+        if ($strategyName === 'random') {
+            $strategy = new Random(null, $metisConfig);
+        } elseif ($strategyName === 'round_robin') {
+            $storage = StorageFactory::factory($storageConfig);
+            $strategy = new RoundRobin($storage, $metisConfig);
+        }
 
-        return new Metis($hermes, $storage, $options);
+        return new Metis($strategy);
     }
 }
