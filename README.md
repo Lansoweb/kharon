@@ -16,19 +16,60 @@ server to connect to. More info on the Hermes documentation.
 
 ## Components
 
-* Server list
+* Service list
 * Rule
 
-### Server list
+### Service list
 
 * Static: from a configuration file
-* Fetched: The library will fetch the list from a remote server, like [Athena](https://github.com/mt-olympus/athena) (Service Discovery) or [Demeter](https://github.com/mt-olympus/demeter) (Distributed Configuration)
+* Fetched: from a remote server
+
+The fetched method is available through one of the following libraries:
+* [metis-athena](https://github.com/mt-olympus/metis-athena): Fetches the list from a [Athena](https://github.com/mt-olympus/athena) (Service Discovery) service
+* [metis-demeter](https://github.com/mt-olympus/metis-demeter): Fetches the list from a [Demeter](https://github.com/mt-olympus/demeter) (Distributed Configuration) service
+
+#### Static server list
+The list is an well formed array:
+```php
+return [
+    'metis' => [
+        'services' => [
+            'service1' => [ // a unique service identification
+                [
+                    'host' => 'server1',
+                    'address' => 'http://192.168.1.2',
+                    'path' => '/v1/service1',
+                ],
+                [
+                    'host' => 'server2',
+                    'address' => 'https://server2',
+                    'path' => '/v1/service1',
+                ],
+                [
+                    'host' => 'server3',
+                    'address' => 'https://server3.mycompany.com',
+                    'port' => '7001',
+                    'path' => '/v1/service1',
+                ],
+            ],
+            'service2' => [ // a unique service identification
+                [
+                    'host' => 'server1',
+                    'address' => 'http://192.168.1.2',
+                    'port' => '7002',
+                    'path' => '/v1/service2',
+                ],
+            ],
+        ],
+    ],
+];
+```
 
 ### Strategy
 
 Regardless the chosen strategy, if there is a [Cerberus](https://github.com/mt-olympus/cerberus) (Circuit Breaker) attached,
 the unavailable services will be filtered. 
 
-* RoundRobin: Cycles among the servers in a specific order
-* Random: Each time will select a random server from the list
-* ResponseTime: Each server has it's response time measured and this time is weighted. The faster servers have more probability to be chosen.
+* RoundRobin: Cycles among the services in a specific order
+* Random: Each time will select a random service from the list
+* ResponseTime: Each service has it's response time measured and this time is weighted. The faster service have more probability to be chosen.
