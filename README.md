@@ -37,27 +37,21 @@ return [
             'service1' => [ // a unique service identification
                 [
                     'host' => 'server1',
-                    'address' => 'http://192.168.1.2',
-                    'path' => '/v1/service1',
+                    'uri' => 'http://192.168.1.2/v1/service1',
                 ],
                 [
                     'host' => 'server2',
-                    'address' => 'https://server2',
-                    'path' => '/v1/service1',
+                    'uri' => 'https://server2/v1/service1',
                 ],
                 [
                     'host' => 'server3',
-                    'address' => 'https://server3.mycompany.com',
-                    'port' => '7001',
-                    'path' => '/v1/service1',
+                    'uri' => 'https://server3.mycompany.com:7001/v1/service1',
                 ],
             ],
             'service2' => [ // a unique service identification
                 [
                     'host' => 'server1',
-                    'address' => 'http://192.168.1.2',
-                    'port' => '7002',
-                    'path' => '/v1/service2',
+                    'uri' => 'http://192.168.1.2:7002/v1/service2',
                 ],
             ],
         ],

@@ -8,9 +8,9 @@ final class Random extends AbstractStrategy
      *
      * {@inheritDoc}
      *
-     * @see \Metis\Strategy\StrategyInterface::getService()
+     * @see \Metis\Strategy\StrategyInterface::getUri()
      */
-    public function getService($serviceName)
+    public function getUri($serviceName)
     {
         if (! array_key_exists($serviceName, $this->services)) {
             throw new \InvalidArgumentException("Namespace '$serviceName' not found");
@@ -18,7 +18,7 @@ final class Random extends AbstractStrategy
 
         $list = $this->services[$serviceName];
 
-        return $list[array_rand($list)];
+        return $list[array_rand($list)]['uri'];
     }
 
     /**

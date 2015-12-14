@@ -10,9 +10,9 @@ final class RoundRobin extends AbstractStrategy
      *
      * {@inheritDoc}
      *
-     * @see \Metis\Strategy\StrategyInterface::getService()
+     * @see \Metis\Strategy\StrategyInterface::getUri()
      */
-    public function getService($serviceName)
+    public function getUri($serviceName)
     {
         if (! array_key_exists($serviceName, $this->services)) {
             throw new \InvalidArgumentException("Service '$serviceName' not found");
@@ -27,7 +27,7 @@ final class RoundRobin extends AbstractStrategy
 
         $this->saveState();
 
-        return $list[$this->pointer];
+        return $list[$this->pointer]['uri'];
     }
 
     /**

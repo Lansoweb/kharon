@@ -15,9 +15,9 @@ class Metis
         $this->strategy = $strategy;
     }
 
-    public function getServer($namespace)
+    public function getUri($namespace)
     {
-        return $this->strategy->getServer($namespace);
+        return $this->strategy->getUri($namespace);
     }
 
     public function updateServices($services)

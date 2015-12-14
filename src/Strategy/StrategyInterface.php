@@ -3,7 +3,7 @@ namespace Metis\Strategy;
 
 interface StrategyInterface
 {
-    public function getService($serviceName);
+    public function getUri($serviceName);
     public function updateServices($services);
 
     protected function setOptions($options);
