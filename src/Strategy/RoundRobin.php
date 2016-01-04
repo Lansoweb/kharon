@@ -36,7 +36,7 @@ final class RoundRobin extends AbstractStrategy
      *
      * @see \Metis\Strategy\StrategyInterface::loadState()
      */
-    protected function loadState()
+    public function loadState()
     {
         $this->pointer = (int) $this->storage->getItem('metis.pointer');
     }
@@ -52,7 +52,7 @@ final class RoundRobin extends AbstractStrategy
      *
      * @see \Metis\Strategy\StrategyInterface::setOptions()
      */
-    protected function setOptions($options)
+    public function setOptions($options)
     {
         // TODO Auto-generated method stub
     }

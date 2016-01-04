@@ -19,6 +19,8 @@ class HermesFactory implements FactoryInterface
         $metisFactory = new Factory();
         $metis = $metisFactory->createService($serviceLocator);
 
-        return $hermes->setLoadBalance($metis);
+        $hermes->setLoadBalance($metis);
+
+        return $hermes;
     }
 }

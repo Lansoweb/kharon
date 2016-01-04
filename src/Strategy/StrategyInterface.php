@@ -5,7 +5,5 @@ interface StrategyInterface
 {
     public function getUri($serviceName);
     public function updateServices($services);
-
-    protected function setOptions($options);
-    protected function loadState();
+    public function setOptions($options);
 }

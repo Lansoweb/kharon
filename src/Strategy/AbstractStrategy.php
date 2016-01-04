@@ -12,7 +12,7 @@ abstract class AbstractStrategy implements StrategyInterface
 
     protected $options;
 
-    public function __construct(StorageInterface $storage, $options = [])
+    public function __construct(StorageInterface $storage = null, $options = [])
     {
         $this->storage = $storage;
 
@@ -38,5 +38,11 @@ abstract class AbstractStrategy implements StrategyInterface
             throw new \InvalidArgumentException("Service list must be an array.");
         }
         $this->services = $services;
+
+        return $this->services;
+    }
+
+    protected function loadState()
+    {
     }
 }

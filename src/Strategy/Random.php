@@ -27,16 +27,7 @@ final class Random extends AbstractStrategy
      *
      * @see \Metis\Strategy\StrategyInterface::setOptions()
      */
-    protected function setOptions($options)
-    {
-        // Nothing to do here
-    }
-
-    /**
-     * {@inheritDoc}
-     * @see \Metis\Strategy\StrategyInterface::loadState()
-     */
-    protected function loadState()
+    public function setOptions($options)
     {
         // Nothing to do here
     }
