@@ -5,6 +5,10 @@ return [
         'factories' => [
             Metis\Metis::class => Metis\Factory::class,
         ],
+        'aliases' => [
+            \Hermes\Api\Client::class => Metis\Metis::class,
+            'hermes' => Metis\Metis::class,
+        ]
     ],
     'metis' => [
         'services' => [],

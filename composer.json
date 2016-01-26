@@ -14,14 +14,15 @@
     "satooshi/php-coveralls" : "~0.6"
   },
   "license" : "MIT",
-  "autoload-dev" : {
-    "psr-4" : {
-      "MetisTest\\" : "test/"
-    }
-  },
   "autoload" : {
     "psr-4" : {
       "Metis\\" : "src/"
+    },
+    "classmap" : [ "./" ]
+  },
+  "autoload-dev" : {
+    "psr-4" : {
+      "MetisTest\\" : "test/"
     }
   },
   "type" : "library",
