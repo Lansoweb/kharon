@@ -4,10 +4,11 @@ return [
     'service_manager' => [
         'factories' => [
             Metis\Metis::class => Metis\Factory::class,
+            'hermes.metis' => Metis\HermesFactory::class,
+            \Hermes\Api\Client::class => Metis\HermesFactory::class,
         ],
         'aliases' => [
-            \Hermes\Api\Client::class => Metis\Metis::class,
-            'hermes' => Metis\Metis::class,
+            'hermes' => 'hermes.metis',
         ]
     ],
     'metis' => [
