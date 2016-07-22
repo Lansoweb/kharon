@@ -2,20 +2,22 @@
 
 namespace Metis;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\Cache\StorageFactory;
+use Interop\Container\ContainerInterface;
 use Metis\Strategy\Random;
 use Metis\Strategy\RoundRobin;
+use Zend\Cache\StorageFactory;
+use Zend\ServiceManager\Factory\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 class Factory implements FactoryInterface
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
+     * @see \Zend\ServiceManager\Factory\FactoryInterface::__invoke()
      */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $config = $serviceLocator->get('config');
+        $config = $container->get('config');
         $metisConfig = $config['metis'];
         $storageConfig = $metisConfig['storage'];
         $strategyName = $metisConfig['strategy'];
@@ -28,5 +30,13 @@ class Factory implements FactoryInterface
         }
 
         return new Metis($strategy);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        return $this($serviceLocator, Factory::class);
     }
 }
