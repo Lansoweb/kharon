@@ -1,7 +1,5 @@
 # Metis
 
-UNDER DEVELOPMENT!
-
 ## Introduction
 
 This is a Dynamic Routing and Load Balance library made with PHP.
@@ -67,3 +65,17 @@ the unavailable services will be filtered.
 * RoundRobin: Cycles among the services in a specific order
 * Random: Each time will select a random service from the list
 * ResponseTime: Each service has it's response time measured and this time is weighted. The faster service have more probability to be chosen.
+
+## Installation
+
+```
+composer require mt-olympus/metis
+```
+
+### Zend Expressive
+
+Just copy the ```config/metis.global.php.dist``` to your expressive project as config/autoload/metis.global.php
+
+### Zend Framework
+
+Include the module in your application.config.php
