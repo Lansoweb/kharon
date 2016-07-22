@@ -6,7 +6,7 @@
     "zendframework/zend-stdlib" : "^2.7 || ^3.0",
     "zendframework/zend-servicemanager" : "^2.7 || ^3.1",
     "zendframework/zend-cache" : "^2.7.1",
-    "mt-olympus/hermes" : "dev-develop"
+    "mt-olympus/hermes" : "^1.0.0"
   },
   "require-dev" : {
     "phpunit/phpunit" : "^5.0",
