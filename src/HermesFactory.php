@@ -3,7 +3,7 @@ namespace Metis;
 
 use Hermes\Api\ClientFactory;
 use Interop\Container\ContainerInterface;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class HermesFactory implements FactoryInterface

@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 use Metis\Strategy\Random;
 use Metis\Strategy\RoundRobin;
 use Zend\Cache\StorageFactory;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class Factory implements FactoryInterface
