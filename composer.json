@@ -1,37 +1,34 @@
 {
-  "name" : "mt-olympus/metis",
-  "description" : "Load Balance implementation in PHP",
-  "require" : {
-    "php" : "^5.6 || ^7.0",
-    "zendframework/zend-stdlib" : "^2.7 || ^3.0",
-    "zendframework/zend-servicemanager" : "^2.7 || ^3.1",
-    "zendframework/zend-cache" : "^2.7.1",
-    "mt-olympus/hermes" : "^1.0.0"
-  },
-  "require-dev" : {
-    "phpunit/phpunit" : "^5.0",
-    "squizlabs/php_codesniffer" : "^2.3",
-    "satooshi/php-coveralls" : "~0.6"
-  },
-  "license" : "MIT",
-  "autoload-dev" : {
-    "psr-4" : {
-      "MetisTest\\" : "test/"
-    }
-  },
-  "autoload" : {
-    "psr-4" : {
-      "Metis\\" : "src/"
+    "name": "mt-olympus/metis",
+    "description": "Load Balance implementation in PHP",
+    "require": {
+        "php": "^7.1",
+        "laminas/laminas-stdlib": "^3.0",
+        "laminas/laminas-servicemanager": "^3.1",
+        "laminas/laminas-cache": "^2.8 || ^2.9",
+        "mt-olympus/hermes": "^1.5",
+        "laminas/laminas-dependency-plugin": "^0.2"
     },
-    "classmap" : [ "./" ]
-  },
-  "type" : "library",
-  "scripts" : {
-    "test" : [ "php vendor/squizlabs/php_codesniffer/scripts/phpcs", "php vendor/phpunit/phpunit/phpunit" ]
-  },
-  "homepage" : "https://github.com/mt-olympus/metis",
-  "authors" : [ {
-    "name" : "Leandro Silva",
-    "homepage" : "http://leandrosilva.info/"
-  } ]
+    "license": "MIT",
+    "autoload-dev": {
+        "psr-4": {
+            "MetisTest\\": "test/"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Metis\\": "src/"
+        },
+        "classmap": [
+            "./"
+        ]
+    },
+    "type": "library",
+    "homepage": "https://github.com/mt-olympus/metis",
+    "authors": [
+        {
+            "name": "Leandro Silva",
+            "homepage": "http://leandrosilva.info/"
+        }
+    ]
 }

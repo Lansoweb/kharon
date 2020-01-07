@@ -1,7 +1,7 @@
 <?php
 namespace Metis\Strategy;
 
-use Zend\Cache\Storage\StorageInterface;
+use Laminas\Cache\Storage\StorageInterface;
 
 abstract class AbstractStrategy implements StrategyInterface
 {
