@@ -6,8 +6,7 @@
         "laminas/laminas-stdlib": "^3.0",
         "laminas/laminas-servicemanager": "^3.1",
         "laminas/laminas-cache": "^2.8 || ^2.9",
-        "mt-olympus/hermes": "^1.5",
-        "laminas/laminas-dependency-plugin": "^0.2"
+        "mt-olympus/hermes": "^1.5"
     },
     "license": "MIT",
     "autoload-dev": {
